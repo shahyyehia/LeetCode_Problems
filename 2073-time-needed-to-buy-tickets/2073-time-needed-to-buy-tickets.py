@@ -4,14 +4,19 @@ class Solution(object):
         if (n==0):
             return 0
         seconds=0
-        for i in range(n):
-            for j in range(len(tickets)):
-                if tickets[k]==0:
-                    if j>k:
-                        break
-                if (tickets[j]>0):
-                    seconds+=1
-                    tickets[j]-=1
-            print(tickets)
+        for j in range(len(tickets)):
+            if (tickets[j]>0):
+                if (j>k):
+                    if(tickets[j]>=n):
+                        seconds-=1
+                if (tickets[j]-n>=0):
+                    seconds+=n
+                    tickets[j]-=n
+                else:
+                    seconds += tickets[j]
+                    tickets[j]=0
+                
+
         return seconds
+            
         
