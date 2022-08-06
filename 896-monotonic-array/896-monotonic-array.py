@@ -7,13 +7,7 @@ class Solution(object):
             dec.append(nums[i])
         nums.sort()
         dec.sort(reverse=True)
-        def equalss(list1,list2):
-            for i in range(len(list1)):
-                if list1[i]!=list2[i]:
-                    return False
-            return True
-        equalss(original,dec)
-        if equalss(original,nums) or equalss(original,dec):
+        if original==nums or original==dec:
             return "true"
         else:
             return False
